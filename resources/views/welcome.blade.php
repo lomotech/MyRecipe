@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    My Recipe 2
+                    My Recipe
                 </div>
 
                 <div class="links">
