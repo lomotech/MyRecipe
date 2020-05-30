@@ -7,9 +7,9 @@ Route::get('/', function () {
 });
 
 Route::get('/recipes', function() {
-    return 'ini adalah senarai resepi';
+    return view('recipes.index');
 });
 
 Route::get('/recipes/{recipe}', function($recipe) {
-    return 'ini adalah resepi '.$recipe;
+    return view('recipes.show', compact('recipe'));
 });
