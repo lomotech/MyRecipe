@@ -6,10 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/recipes', function() {
-    return view('recipes.index');
-});
+Route::get('/recipes', 'RecipesController@index');
 
-Route::get('/recipes/{recipe}', function($recipe) {
-    return view('recipes.show', compact('recipe'));
-});
+Route::get('/recipes/{recipe}', 'RecipesController@show');
