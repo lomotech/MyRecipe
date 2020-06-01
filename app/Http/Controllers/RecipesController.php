@@ -26,6 +26,10 @@ class RecipesController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+           'name' => 'required'
+        ]);
+
         $input = $request->all();
 
         Recipe::create($input);
@@ -45,5 +49,12 @@ class RecipesController extends Controller
         $recipe->update($input);
 
         return redirect(route('recipes.show', $recipe->id));
+    }
+
+    public function destroy(Recipe $recipe)
+    {
+        $recipe->delete();
+
+        return 'success';
     }
 }

@@ -7,6 +7,11 @@
         @csrf
         Nama <input type="text" name="name">
 
-        <button type="submit">Hantar</button>
+        @error('name')
+            <div style="color: red">{{ $message }}</div>
+        @enderror
+        <div>
+            <button type="submit">Hantar</button>
+        </div>
     </form>
 @endsection
