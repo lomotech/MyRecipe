@@ -8,8 +8,8 @@
     <title>My Recipe</title>
 </head>
 <body>
-@include('layouts.nav')
+{{--@include('layouts.nav')--}}
 @yield('content')
-@include('layouts.footer')
+{{--@include('layouts.footer')--}}
 </body>
 </html>
