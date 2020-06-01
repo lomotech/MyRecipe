@@ -8,4 +8,4 @@ Route::get('/', function () {
 
 Route::get('/recipes', 'RecipesController@index');
 
-Route::get('/recipes/{recipe}', 'RecipesController@show');
+Route::get('/recipes/{recipe}', 'RecipesController@show')->name('recipes.show');
