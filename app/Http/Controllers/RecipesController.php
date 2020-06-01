@@ -7,25 +7,43 @@ use Illuminate\Http\Request;
 
 class RecipesController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $recipes = Recipe::all(); // [ {}, {} ]
 
         return view('recipes.index', compact('recipes'));
     }
 
-    public function show(Recipe $recipe) {
+    public function show(Recipe $recipe)
+    {
         return view('recipes.show', compact('recipe'));
     }
 
-    public function create() {
+    public function create()
+    {
         return view('recipes.create');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $input = $request->all();
 
         Recipe::create($input);
 
-        return 'success';
+        return redirect(route('recipes.index'));
+    }
+
+    public function edit(Recipe $recipe)
+    {
+        return view('recipes.edit', compact('recipe'));
+    }
+
+    public function update(Recipe $recipe, Request $request)
+    {
+        $input = $request->all();
+
+        $recipe->update($input);
+
+        return redirect(route('recipes.show', $recipe->id));
     }
 }
