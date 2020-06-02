@@ -1,12 +1,8 @@
-body {
-    background-color: white;
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-    .container {
-        width: 100%;
-        background-color: black;
-    }
-}
+// Variables
+@import 'variables';
 
-//<body>
-//    <div class="container">
-//                          ...
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
