@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateRecipesRequest;
+use App\Http\Requests\UpdateRecipesRequest;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 
@@ -24,12 +26,8 @@ class RecipesController extends Controller
         return view('recipes.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateRecipesRequest $request)
     {
-        $request->validate([
-           'name' => 'required'
-        ]);
-
         $input = $request->all();
 
         Recipe::create($input);
@@ -42,7 +40,7 @@ class RecipesController extends Controller
         return view('recipes.edit', compact('recipe'));
     }
 
-    public function update(Recipe $recipe, Request $request)
+    public function update(Recipe $recipe, UpdateRecipesRequest $request)
     {
         $input = $request->all();
 
